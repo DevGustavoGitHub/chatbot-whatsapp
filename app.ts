@@ -30,11 +30,6 @@ async function connectToWhatsApp () {
             pedido: 987654,
             status: "A caminho!",
             telefone: "5528999852542"
-        },
-        {
-            pedido: 654789,
-            status: "A caminho!",
-            telefone: "5528999536226"
         }
     ];
 
@@ -103,7 +98,7 @@ async function connectToWhatsApp () {
     //Inicio do atendimento
     async function boasVindas(sock, m, msgText: string) {
         if (!exibiuBoasVindas) {
-            var message = `Olá, seja bem vindo a nossa central de Atendimento. Por favor, digite a opção abaixo que deseja: \n 1 - Status do pedido. \n 2 - Falar com um de nossos atendentes.`;
+            var message = `Olá, seja bem vindo ao SAC da Chef Mio. Por favor, digite a opção abaixo que deseja: \n 1 - Status do pedido. \n 2 - Falar com um de nossos atendentes.`;
             await sock.sendMessage(m.messages[0].key.remoteJid!, { text: `🤖 ${message}` });
             exibiuBoasVindas = true;
         } else {
